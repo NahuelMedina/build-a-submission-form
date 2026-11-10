@@ -15,12 +15,11 @@ app.use(express.json());
 
 app.use(express.urlencoded({ extended: true}));
 
-app.use(notFoundHandler)
-
-app.use(finalErrorHandler)
 
 app.use("/api", apiRouter);
 
+app.use(notFoundHandler)
+app.use(finalErrorHandler)
 
 app.listen(3000, () => {
     console.log(`Server listening on: http://localhost:3000`);
